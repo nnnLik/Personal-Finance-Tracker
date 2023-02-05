@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from django.contrib.auth.admin import UserAdmin
-from .models import UserFinance
+from .models import UserFinance, Settings
 
 from django.utils.translation import gettext, gettext_lazy as _
 
@@ -31,3 +31,4 @@ class UserFinanceAdmin(UserAdmin):
 
 
 admin.site.register(UserFinance, UserFinanceAdmin)
+admin.site.register(Settings)
