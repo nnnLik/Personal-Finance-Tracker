@@ -1,4 +1,3 @@
-
 FROM python:3.9-alpine
 
 WORKDIR /usr/src/app
@@ -11,7 +10,7 @@ RUN apk update \
 
 RUN pip3 install --upgrade pip
 COPY ./requirements/requirements-prod.txt .
-RUN pip3 install -r requirements/requirements-prod.txt
+RUN pip3 install -r requirements-prod.txt
 
 COPY ./entrypoint.sh .
 
