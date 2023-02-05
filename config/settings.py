@@ -58,7 +58,7 @@ DATABASES = {
         "ENGINE": config("SQL_ENGINE", ""),
         "NAME": config("SQL_DB"),
         "USER": config("SQL_USER", ""),
-        "PASSWORD": config("SQL_PASSWORD", ""),
+        "PASSWORD": config("SQL_PASSWORD", "password"),
         "HOST": config("SQL_HOST", ""),
         "PORT": config("SQL_PORT", ""),
     }

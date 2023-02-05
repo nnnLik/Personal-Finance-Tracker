@@ -1,7 +1,8 @@
 #! /usr/bin/env bash
 
 sleep 10;
-make migrate
+python manage.py makemigrations
+python manage.py migrate
 
 sleep 10;
-make run
+python manage.py runserver
