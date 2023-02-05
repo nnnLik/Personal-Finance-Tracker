@@ -24,7 +24,6 @@ jobs:
         pip install -r requirements/requirements-prod.txt
 
     - name: Deploy to main branch
-      if: success()
       uses: actions/github-script@v3
       with:
         github-token: ${{ secrets.TOKEN }}
