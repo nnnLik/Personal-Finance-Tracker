@@ -3,5 +3,6 @@ run:
 migrate:
 	python manage.py makemigrations
 	python manage.py migrate
-user:
-	python manage.py createsuperuser
+all:
+	make migrate
+	make run
