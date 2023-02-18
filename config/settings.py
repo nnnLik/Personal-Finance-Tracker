@@ -61,12 +61,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 DATABASES = {
     "default": {
-        "ENGINE": config("SQL_ENGINE", ""),
-        "NAME": config("SQL_DB"),
-        "USER": config("SQL_USER", ""),
-        "PASSWORD": config("SQL_PASSWORD", "password"),
-        "HOST": config("SQL_HOST", ""),
-        "PORT": config("SQL_PORT", ""),
+        "ENGINE": config("POSTGRES_ENGINE", ""),
+        "NAME": config("POSTGRES_DB", ""),
+        "USER": config("POSTGRES_USER", ""),
+        "PASSWORD": config("POSTGRES_PASSWORD", ""),
+        "HOST": config("POSTGRES_HOST", ""),
+        "PORT": config("POSTGRES_PORT", ""),
     }
 }
 
