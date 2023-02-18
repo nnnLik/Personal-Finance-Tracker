@@ -1,19 +1,15 @@
-FROM python:3.9-alpine
+FROM python:3.11.1
 
 WORKDIR /usr/src/app
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN apk update \
-    && apk add postgresql-dev gcc python3-dev musl-dev
+RUN apt-get update && apt-get upgrade -y 
+RUN apt-get install postgresql gcc python3-dev musl-dev -y
 
 RUN pip3 install --upgrade pip
-COPY ./requirements/requirements-prod.txt .
-RUN pip3 install -r requirements-prod.txt
-
-COPY ./entrypoint.sh .
+COPY ./requirements/requirements-dev.txt .
+RUN pip3 install -r requirements-dev.txt
 
 COPY . /usr/src/app/
-
-RUN chmod 755 /usr/src/app/prestart.sh
