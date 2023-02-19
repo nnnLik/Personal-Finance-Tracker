@@ -7,6 +7,8 @@ from asgiref.sync import sync_to_async
 from src.user.models import UserFinance
 from src.user.schemas import UserFinancePublicSchema, UserFinancePrivateSchema
 
+from src.user.services import user_services
+
 router = Router()
 
 
@@ -15,7 +17,7 @@ router = Router()
     response=List[UserFinancePublicSchema],
 )
 async def list_users(request: HttpRequest):
-    users = UserFinance.objects.all()
+    users = user_services.get_users()
     return await sync_to_async(list)(users)
 
 
@@ -24,5 +26,5 @@ async def list_users(request: HttpRequest):
     response=List[UserFinancePrivateSchema],
 )
 async def list_users(request: HttpRequest):
-    users = UserFinance.objects.all()
+    users = user_services.get_users()
     return await sync_to_async(list)(users)
