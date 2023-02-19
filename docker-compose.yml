@@ -11,6 +11,8 @@ services:
   finance:
     build: ./
     container_name: finance
+    # command: >
+    #   sh -c "python manage.py migrate && uvicorn config.asgi:application --host 0.0.0.0 --port 8000 --reload"
     command: >
       sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
