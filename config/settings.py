@@ -20,11 +20,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # third party application
     "rest_framework",
     "djoser",
     "drf_yasg",
     "corsheaders",
+    # application
     "src.user",
+    "src.bank",
 ]
 
 MIDDLEWARE = [
@@ -132,10 +135,11 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript)
-STATIC_URL = "static/"
+# Static files (CSS, JavaScript, Default images)
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-# Media files (Images)
+# Media files (User Images)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 

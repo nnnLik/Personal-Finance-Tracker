@@ -22,7 +22,9 @@ class UserFinance(AbstractUser):
     work_place = models.CharField(max_length=150, blank=True, null=True)
     work_position = models.CharField(max_length=150, blank=True, null=True)
 
-    avatar = models.ImageField(upload_to="user/avatar/", blank=True, null=True)
+    avatar = models.ImageField(
+        upload_to="user/avatar/", default="default/default_av.png"
+    )
 
 
 class Settings(models.Model):
